@@ -1,5 +1,5 @@
 # Elasticpress Featured Image Url
-Adds the featured image url to WordPress post meta for easy indexing with Elasticpress.
+Automatically adds the featured image url to WordPress post meta for easy indexing with Elasticpress when posts are updated or published.  Includes WP-CLI commands for updating already published posts.
 
 ### WP-CLI Commands
 
