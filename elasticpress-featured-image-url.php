@@ -99,10 +99,12 @@ $network_update_featured_image_meta_command = function() {
 	}
 };
 
-WP_CLI::add_command( 'network-update-featured-image-meta', $network_update_featured_image_meta_command, array(
-	'before_invoke' => function(){
-		if ( ! is_multisite() ) {
-			WP_CLI::error( 'This is not a multisite install.' );
-		}
-	},
-) );
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	WP_CLI::add_command( 'network-update-featured-image-meta', $network_update_featured_image_meta_command, array(
+		'before_invoke' => function(){
+			if ( ! is_multisite() ) {
+				WP_CLI::error( 'This is not a multisite install.' );
+			}
+		},
+	));
+}
